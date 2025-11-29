@@ -1,0 +1,29 @@
+import java.awt.*;
+
+class forms {
+     forms(){
+    	 
+    	 Frame frame = new Frame("Form");
+    	 
+    	 Label email = new Label("Email");
+    	 email.setBounds(50,130,100,30);
+    	 Label password = new Label("Password");
+    	 password.setBounds(50, 70, 100, 30);
+    	  
+    	 frame.add(email); 
+    	 frame.add(password);
+    	 
+    	 frame.setLayout(null);
+    	 frame.setVisible(true);
+    	 frame.setSize(100, 100);
+    	 	 
+     }
+}
+
+
+class Form{
+	public static void main(String[] args) {
+     new forms();
+
+	}
+}

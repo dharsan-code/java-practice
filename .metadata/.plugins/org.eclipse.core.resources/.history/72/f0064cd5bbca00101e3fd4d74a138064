@@ -1,0 +1,17 @@
+import java.util.*;
+
+public class collection {
+
+	public static void main(String[] args) {
+
+
+		Stack<Integer> arr = new Stack<>();
+		
+		arr.push(1);
+		arr.push(2);
+		System.out.println(arr.peek());
+		System.out.println(arr);
+
+	}
+
+}

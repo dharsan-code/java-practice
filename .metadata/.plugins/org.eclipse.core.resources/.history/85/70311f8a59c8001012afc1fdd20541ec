@@ -1,0 +1,23 @@
+class laptop extends Thread{
+	// 1. extends thread
+	
+	// method must be in public 
+	public void run() {
+		System.out.println("laptop is running " + laptop.currentThread().threadId());
+		System.out.println("vscode is running " + laptop.currentThread().threadId());
+		System.out.println("code is compiling " + laptop.currentThread().threadId());
+	}
+	
+
+}
+public class multiThreading {
+	public static void main(String[] args) {
+		// tasks run at the same time simultaneously
+		int count = 2;
+		for(int i=0;i<count;i++) {
+			laptop lap = new laptop();
+			lap.start();
+		}
+		
+	}
+}

@@ -1,0 +1,100 @@
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class awtCalculator {
+	
+	Frame frame;
+    TextField display;
+
+    // Declare buttons separately
+    Button b7, b8, b9, bDiv;
+    Button b4, b5, b6, bMul;
+    Button b1, b2, b3, bSub;
+    Button b0, bC, bEq, bAdd;
+
+    public CalculatorButtons() {
+
+        frame = new Frame("AWT Calculator");
+
+        display = new TextField();
+        display.setBounds(30, 50, 240, 40);
+        frame.add(display);
+
+        // Row 1
+        b7 = new Button("7");
+        b7.setBounds(30, 100, 50, 50);
+
+        b8 = new Button("8");
+        b8.setBounds(90, 100, 50, 50);
+
+        b9 = new Button("9");
+        b9.setBounds(150, 100, 50, 50);
+
+        bDiv = new Button("/");
+        bDiv.setBounds(210, 100, 50, 50);
+
+        // Row 2
+        b4 = new Button("4");
+        b4.setBounds(30, 160, 50, 50);
+
+        b5 = new Button("5");
+        b5.setBounds(90, 160, 50, 50);
+
+        b6 = new Button("6");
+        b6.setBounds(150, 160, 50, 50);
+
+        bMul = new Button("*");
+        bMul.setBounds(210, 160, 50, 50);
+
+        // Row 3
+        b1 = new Button("1");
+        b1.setBounds(30, 220, 50, 50);
+
+        b2 = new Button("2");
+        b2.setBounds(90, 220, 50, 50);
+
+        b3 = new Button("3");
+        b3.setBounds(150, 220, 50, 50);
+
+        bSub = new Button("-");
+        bSub.setBounds(210, 220, 50, 50);
+
+        // Row 4
+        b0 = new Button("0");
+        b0.setBounds(30, 280, 50, 50);
+
+        bC = new Button("C");
+        bC.setBounds(90, 280, 50, 50);
+
+        bEq = new Button("=");
+        bEq.setBounds(150, 280, 50, 50);
+
+        bAdd = new Button("+");
+        bAdd.setBounds(210, 280, 50, 50);
+
+        // Add all buttons to frame
+        frame.add(b7); frame.add(b8); frame.add(b9); frame.add(bDiv);
+        frame.add(b4); frame.add(b5); frame.add(b6); frame.add(bMul);
+        frame.add(b1); frame.add(b2); frame.add(b3); frame.add(bSub);
+        frame.add(b0); frame.add(bC); frame.add(bEq); frame.add(bAdd);
+
+        frame.setSize(320, 380);
+        frame.setLayout(null);
+        frame.setVisible(true);
+
+        // Example: Access button separately
+        b7.addActionListener(e -> display.setText(display.getText() + "7"));
+        bAdd.addActionListener(e -> display.setText(display.getText() + "+"));
+    }
+	
+	
+	
+
+	public static void main(String[] args) {
+		new awtCalculator();
+		
+
+	}
+
+}

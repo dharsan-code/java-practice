@@ -1,0 +1,17 @@
+class Form {
+     Form(){
+    	 
+    	 Frame frame = new Frame("Form");
+    	 
+     }
+	
+
+}
+
+
+class forms{
+	public static void main(String[] args) {
+
+
+	}
+}

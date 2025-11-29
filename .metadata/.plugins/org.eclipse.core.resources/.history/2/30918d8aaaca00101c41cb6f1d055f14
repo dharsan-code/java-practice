@@ -1,0 +1,13 @@
+import java.net.*;
+public class serverUDP {
+
+	public static void main(String[] args) {
+		DatagramSocket datagramsocket = new DatagramSocket();
+		
+		String msg ="Hi client!";
+		
+		DatagramPacket datagrampacket = new DatagramPacket();
+
+	}
+
+}

@@ -1,0 +1,24 @@
+import java.awt.*;
+import java.awt.event.MouseListener;
+
+public class mouseEvent implements MouseListener {
+	
+	
+	
+	
+	mouseEvent(){
+		Frame container = new Frame();
+		Label lab = new Label("Text");
+		
+		container.add(lab);
+		container.addMouseListener(this);
+		
+		container.setSize(500, 500);
+		container.setLayout(null);
+		container.setVisible(true);
+	}
+	
+    public static void main(String[] args) {
+    	
+    }
+}

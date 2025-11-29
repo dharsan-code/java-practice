@@ -1,0 +1,30 @@
+import java.awt.*;
+
+public class chatAppClient extends Frame implements Runnable, ActionListener{
+
+	TextField textField;
+	TextArea textArea;
+	Button send;
+	
+	chatAppClient(){
+		textField = new TextField();
+		textArea = new TextArea();
+		send = new Button("Send");
+		
+		
+		add(textField);
+		add(textArea);
+		add(send);
+		
+		
+		send.addActionListener(this);
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

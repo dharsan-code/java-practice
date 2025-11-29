@@ -1,0 +1,29 @@
+import java.awt.Frame;
+
+class Form {
+     Form(){
+    	 
+    	 Frame frame = new Frame("Form");
+    	 
+    	 Lable email = new Lable("Email");
+    	 Lable password = new Lable("Password");
+    	  
+    	 frame.add(email);
+    	 frame.add(password);
+    	 
+    	 frame.setLayout(null);
+    	 frame.setVisible(true);
+    	 frame.setSize(100, 100);
+    	 
+    	 
+     }
+
+}
+
+
+class forms{
+	public static void main(String[] args) {
+
+
+	}
+}

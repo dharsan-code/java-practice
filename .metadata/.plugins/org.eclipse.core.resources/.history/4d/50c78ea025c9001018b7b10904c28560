@@ -1,0 +1,29 @@
+import java.awt.*;
+
+public class AWT{
+	
+	AWT(){
+		
+		TextField f =  new TextField();
+		Frame frame = new Frame();
+		Label label = new Label("Enter the name");
+		Button btn = new Button("Submit");
+		Button btn1 = new Button("Clear");
+		
+		frame.add(f);
+		frame.add(label);
+		frame.add(btn);
+		frame.add(btn1);
+		
+		frame.setLayout(new BorderLayout());
+		frame.setVisible(true);
+		frame.setSize(300, 300);
+		frame.setTitle("Form");
+	}
+
+	public static void main(String[] args) {
+		new AWT();
+
+	}
+
+}

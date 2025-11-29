@@ -1,0 +1,93 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.*;
+
+public class chatAppClient extends Frame implements Runnable, ActionListener{
+
+	TextField textField;
+	TextArea textArea;
+	Button send;
+	
+	ServerSocket serversocket;
+	Socket socket;
+	
+	DataInputStream datainputStream;
+	DataOutputStream dataoutputStream;
+	
+	Thread chat;
+	
+	
+	chatAppClient(){
+		textField = new TextField();
+		textArea = new TextArea();
+		send = new Button("Send");
+		
+		try {
+			serversocket = new ServerSocket(12000);
+			socket = serversocket.accept();
+			
+			datainputStream = new DataInputStream(socket.getInputStream());
+			dataoutputStream = new 	DataOutputStream(socket.getOutputStream());
+						
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		
+		chat = new Thread(this);
+		chat.setDaemon(true);	
+		chat.start();
+	    
+		add(textField);
+		add(textArea);
+		add(send);
+		
+		
+		send.addActionListener(this);
+		
+		
+		setSize(500, 500);
+		setTitle("ChatApp");
+		setLayout(new FlowLayout());
+		setVisible(true);
+		
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String msg = textField.getText();
+		textArea.append("Client" + msg + "\n");
+		textField.setText("");
+		
+		try {
+			dataoutputStream.writeUTF(msg);
+			dataoutputStream.flush();
+		}
+		catch(Exception E) {
+			System.out.println(E.getMessage());
+		}
+		
+
+	}
+	
+	public void run() {
+		while(true){
+			try {
+				String msg = datainputStream.readUTF();
+				textArea.append("Server" + msg + "\n");
+				
+			}catch(Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		new chatAppClient();
+
+	}
+}

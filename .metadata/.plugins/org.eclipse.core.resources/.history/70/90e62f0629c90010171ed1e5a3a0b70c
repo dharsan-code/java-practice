@@ -1,0 +1,38 @@
+import java.awt.*;
+
+class forms {
+     
+     forms(){
+    	 
+    	 Frame frame = new Frame("Form");
+    	 
+    	 Label email = new Label("Email");
+    	 email.setBounds(50,130,100,30);
+    	 Label password = new Label("Password");
+    	 password.setBounds(50, 70, 100, 30);
+    	 
+    	 TextField emailInput = new TextField("Enter your  email...");
+    	 emailInput.setBounds(170, 130, 100, 30);
+    	 
+    	 TextField passwordInput = new TextField("Enter your  password...");
+    	 passwordInput.setBounds(170, 170, 100, 30);
+    	  
+    	 frame.add(email); 
+    	 frame.add(password);
+    	 frame.add(emailInput);
+    	 frame.add(passwordInput);
+    	 
+    	 frame.setLayout(null);
+    	 frame.setVisible(true);
+    	 frame.setSize(100, 100);
+    	 	 
+     }
+}
+
+
+class Form{
+	public static void main(String[] args) {
+     new forms();
+
+	}
+}

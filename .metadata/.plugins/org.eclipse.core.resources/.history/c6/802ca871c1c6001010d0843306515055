@@ -1,0 +1,23 @@
+import java.util.Scanner;
+import java.io.File;
+
+
+public class fileHandling {
+
+	public static void main(String[] args) {
+      try {
+    	  File f = new File("Example.txt");
+    	  Scanner scan = new Scanner(f);
+    	  
+    	  // hasNextLine() - check is have next line
+    	  while(scan.hasNextLine()) {
+    		  // it will print the line
+    		  System.out.println(scan.nextLine());
+    	  }
+      }catch(Exception E) {
+    	  System.out.println(E.getMessage());
+      }
+
+	}
+
+}

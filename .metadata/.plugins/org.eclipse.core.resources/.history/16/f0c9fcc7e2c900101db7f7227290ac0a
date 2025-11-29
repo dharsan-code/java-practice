@@ -1,0 +1,32 @@
+import java.awt.*;
+
+class count{
+	count(){
+		Frame frame = new Frame("Counter");
+		
+		TextField text = new TextField("0");
+		text.setBounds(50, 50, 30, 30);
+		
+		Button btn = new Button("click me");
+		btn.setBounds(100, 100, 100, 100);
+		
+		frame.add(text);
+		frame.add(btn);
+		
+		frame.setVisible(true);
+		frame.setLayout(null);
+		frame.setSize(500, 500);
+		
+		
+	}
+}
+
+
+public class Counter {
+
+	public static void main(String[] args) {
+		new count();
+
+	}
+
+}

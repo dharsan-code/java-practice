@@ -1,0 +1,22 @@
+import java.util.*;
+
+public class collection {
+
+	public static void main(String[] args) {
+
+
+		Stack<Integer> arr = new Stack<>();
+		
+		arr.push(1);
+		arr.push(2);
+		
+		//for stack - peek(), push(), pop() methods 
+		//peek - top element
+		//pop - delete last element
+		System.out.println(arr.pop());
+		System.out.println(arr.peek());
+		System.out.println(arr);
+
+	}
+
+}

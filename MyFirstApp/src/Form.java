@@ -1,0 +1,56 @@
+import java.awt.*; 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+class forms {
+     
+     forms(){
+    	 
+    	 Frame frame = new Frame("Form");
+    	 
+    	 Label email = new Label("Email");
+    	 email.setBounds(50, 70, 100, 30);
+    	 Label password = new Label("Password");
+    	 password.setBounds(50,130,100,30);
+    	 
+    	 TextField emailInput = new TextField("Enter your  email...");
+    	 emailInput.setBounds(170, 70, 100, 30);
+    	 
+    	 TextField passwordInput = new TextField("Enter your  password...");
+    	 passwordInput.setBounds(170, 130, 100, 30);
+    	  
+    	 Button submit = new Button("Submit");
+    	 submit.setBounds(50, 190, 50, 30);
+    	 
+    	 Button clear = new Button("Clear");
+    	 clear.setBounds(120, 190, 50, 30);
+    	 
+    	 frame.add(email); 
+    	 frame.add(password);
+    	 frame.add(emailInput);
+    	 frame.add(passwordInput);
+    	 frame.add(submit);
+    	 frame.add(clear);
+    	 
+    	 frame.setLayout(null);
+    	 frame.setVisible(true);
+    	 frame.setSize(100, 100);
+    	 
+    	 ActionListener submitListener = new ActionListener() {
+    		 public void actionPerformed(ActionEvent e) {
+    			 System.out.println(emailInput.getText());
+    			 System.out.println(passwordInput.getText());
+    			 System.out.println();
+    		 }
+    	 };
+    	 
+    	 submit.addActionListener(submitListener); 
+     }
+}
+
+
+class Form{
+	public static void main(String[] args) {
+     new forms();
+	}
+}

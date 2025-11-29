@@ -1,0 +1,19 @@
+class counter {
+	int counter ;
+	
+	public void increment() {
+		counter++;
+	}
+}
+
+
+
+
+
+public class multiThreadingUsingSynchronized {
+	public static void main(String[] args) {
+
+
+	}
+
+}

@@ -1,0 +1,239 @@
+import java.awt.*;
+//import java.awt.event.ActionListener;
+//import java.awt.event.ActionEvent;
+import java.awt.event.*;
+
+
+public class awtCalculator implements ActionListener{
+	
+	Frame frame;
+    TextField display;
+
+    // Declare buttons separately
+    Button b7, b8, b9, bDiv;
+    Button b4, b5, b6, bMul;
+    Button b1, b2, b3, bSub;
+    Button b0, bC, bEq, bAdd;
+
+    public awtCalculator() {
+
+        frame = new Frame("AWT Calculator");
+
+        display = new TextField();
+        display.setBounds(30, 50, 240, 40);
+        frame.add(display);
+
+        // Row 1
+        b7 = new Button("7");
+        b7.setBounds(30, 100, 50, 50);
+        b7.addActionListener(this);
+
+        b8 = new Button("8");
+        b8.setBounds(90, 100, 50, 50);
+        b8.addActionListener(this);
+
+        b9 = new Button("9");
+        b9.setBounds(150, 100, 50, 50);
+        b9.addActionListener(this);
+
+        bDiv = new Button("/");
+        bDiv.setBounds(210, 100, 50, 50);
+        bDiv.addActionListener(this);
+
+        // Row 2
+        b4 = new Button("4");
+        b4.setBounds(30, 160, 50, 50);
+        b4.addActionListener(this);
+
+        b5 = new Button("5");
+        b5.setBounds(90, 160, 50, 50);
+        b5.addActionListener(this);
+
+        b6 = new Button("6");
+        b6.setBounds(150, 160, 50, 50);
+        b6.addActionListener(this);
+
+        bMul = new Button("*");
+        bMul.setBounds(210, 160, 50, 50);
+        bMul.addActionListener(this);
+
+        // Row 3
+        b1 = new Button("1");
+        b1.setBounds(30, 220, 50, 50);
+        b1.addActionListener(this);
+
+        b2 = new Button("2");
+        b2.setBounds(90, 220, 50, 50);
+        b2.addActionListener(this);
+
+        b3 = new Button("3");
+        b3.setBounds(150, 220, 50, 50);
+        b3.addActionListener(this);
+
+        bSub = new Button("-");
+        bSub.setBounds(210, 220, 50, 50);
+        bSub.addActionListener(this);
+
+        // Row 4
+        b0 = new Button("0");
+        b0.setBounds(30, 280, 50, 50);
+        b0.addActionListener(this);
+
+        bC = new Button("C");
+        bC.setBounds(90, 280, 50, 50);
+        bC.addActionListener(this);
+
+        bEq = new Button("=");
+        bEq.setBounds(150, 280, 50, 50);
+        bEq.addActionListener(this);
+
+        bAdd = new Button("+");
+        bAdd.setBounds(210, 280, 50, 50);
+        bAdd.addActionListener(this);
+
+        
+        frame.add(b7); frame.add(b8); frame.add(b9); frame.add(bDiv);
+        frame.add(b4); frame.add(b5); frame.add(b6); frame.add(bMul);
+        frame.add(b1); frame.add(b2); frame.add(b3); frame.add(bSub);
+        frame.add(b0); frame.add(bC); frame.add(bEq); frame.add(bAdd);
+
+        frame.setSize(320, 380);
+        frame.setLayout(null);
+        frame.setVisible(true);
+
+        // Example: Access button separately
+    }
+    
+    public void actionPerformed(ActionEvent e) {
+    	if(e.getSource() == b0) {
+    		String experssion = display.getText();
+    		experssion += '0';
+    		display.setText(experssion);
+    	}
+    	
+    	if(e.getSource() == b1) {
+    		String experssion = display.getText();
+    		experssion += '1';
+    		display.setText(experssion);
+    	}
+    	
+    	if(e.getSource() == b2) {
+    		String experssion = display.getText();
+    		experssion += '2';
+    		display.setText(experssion);
+    	}
+    	
+    	if(e.getSource() == b3) {
+    		String experssion = display.getText();
+    		experssion += '3';
+    		display.setText(experssion);
+    	}
+    	
+    	if(e.getSource() == b4) {
+    		String experssion = display.getText();
+    		experssion += '4';
+    		display.setText(experssion);
+    	}
+    	
+    	if(e.getSource() == b5) {
+    		String experssion = display.getText();
+    		experssion += '5';
+    		display.setText(experssion);
+    	}
+    	
+    	if(e.getSource() == b6) {
+    		String experssion = display.getText();
+    		experssion += '6';
+    		display.setText(experssion);
+    	}
+    	
+    	if(e.getSource() == b7) {
+    		String experssion = display.getText();
+    		experssion += '7';
+    		display.setText(experssion);
+    	}
+    	
+    	if(e.getSource() == b8) {
+    		String experssion = display.getText();
+    		experssion += '8';
+    		display.setText(experssion);
+    	}
+    	
+    	if(e.getSource() == b9) {
+    		String experssion = display.getText();
+    		experssion += '9';
+    		display.setText(experssion);
+    	}
+    	
+    	if(e.getSource() == bC) {
+    	  display.setText(null);
+    	}
+    	
+    	if(e.getSource() == bAdd) {
+    		String experssion = display.getText();
+    		experssion += '+';
+    		display.setText(experssion);
+    	}
+    	
+    	if(e.getSource() == bSub) {
+    		String experssion = display.getText();
+    		experssion += '-';
+    		display.setText(experssion);
+    	}
+    	
+    	if(e.getSource() == bMul) {
+    		String experssion = display.getText();
+    		experssion += '*';
+    		display.setText(experssion);
+    	}
+    	
+    	if(e.getSource() == bDiv) {
+    		String experssion = display.getText();
+    		experssion += '/';
+    		display.setText(experssion);
+    	}
+    	
+    	
+    	if(e.getSource() == bEq) {
+    	    int a, b, i;
+    	    char operator = ' ';   // FIX HERE ✔
+    	    String experssion = display.getText();
+    	    String temp1="", temp2="";
+    	    
+    	    for(i = 0; i < experssion.length(); i++) {
+    	        if(Character.isDigit(experssion.charAt(i))) {
+    	            temp1 += experssion.charAt(i);
+    	        } else {
+    	            operator = experssion.charAt(i);
+    	            break;
+    	        }
+    	    }
+    	    
+    	    temp2 = experssion.substring(i+1);
+    	    
+    	    a = Integer.parseInt(temp1);
+    	    b = Integer.parseInt(temp2);
+    	    
+    	    int res = 0;
+    	    
+    	    switch(operator) {
+    	        case '+': res = a + b; break;
+    	        case '-': res = a - b; break;
+    	        case '*': res = a * b; break;
+    	        case '/': res = a / b; break;
+    	    }
+    	    
+    	    display.setText(String.valueOf(res));
+    	    
+    	    
+    	}
+    }
+    
+
+	public static void main(String[] args) {
+		new awtCalculator();
+		
+
+	}
+
+}

@@ -1,0 +1,56 @@
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class awtCalculator {
+	
+	 Frame frame;
+	    TextField display;
+
+	    public awtCalculator() {
+
+	        frame = new Frame("AWT Calculator");
+
+	        display = new TextField();
+	        display.setBounds(30, 50, 240, 40);
+	        frame.add(display);
+
+	        // Buttons text
+	        String[] btnLabels = {
+	            "7", "8", "9", "/",
+	            "4", "5", "6", "*",
+	            "1", "2", "3", "-",
+	            "0", "C", "=", "+"
+	        };
+
+	        Button[] buttons = new Button[16];
+
+	        int x = 30, y = 100;
+	        int index = 0;
+
+	        // Create buttons with loop
+	        for (int i = 0; i < 4; i++) {
+	            for (int j = 0; j < 4; j++) {
+
+	                buttons[index] = new Button(btnLabels[index]);
+	                buttons[index].setBounds(x + (j * 60), y + (i * 60), 50, 50);
+	                frame.add(buttons[index]);
+
+	                index++;
+	            }
+	        }
+
+	        frame.setSize(320, 380);
+	        frame.setLayout(null);
+	        frame.setVisible(true);
+	    }
+	
+	
+	
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

@@ -1,0 +1,11 @@
+
+public class clientUDP {
+
+	public static void main(String[] args) {
+		DatagramSocket data = new DatagramSocket(1800);
+		
+		
+
+	}
+
+}

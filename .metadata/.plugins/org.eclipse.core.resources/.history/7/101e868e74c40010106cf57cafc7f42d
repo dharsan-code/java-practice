@@ -1,0 +1,12 @@
+public class method {
+   public static void main(String[] args) {
+	   add(10, 5);
+	   System.out.println("A is printed here");
+   }
+   
+   
+    public static int add(int a, int b) {	   
+	   int c = a+b ;
+	   return c;
+   }
+}

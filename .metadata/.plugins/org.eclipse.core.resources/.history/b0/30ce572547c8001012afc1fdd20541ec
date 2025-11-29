@@ -1,0 +1,7 @@
+public class multiThreadingUsingSynchronized {
+	public static void main(String[] args) {
+
+
+	}
+
+}

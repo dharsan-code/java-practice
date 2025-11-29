@@ -1,0 +1,20 @@
+import java.awt.*;
+
+public class chatAppClient {
+
+	TextField textField;
+	TextArea textArea;
+	Button send;
+	
+	chatAppClient(){
+		textField = new TextField();
+		textArea = new TextArea();
+		send = new Button("Send");
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

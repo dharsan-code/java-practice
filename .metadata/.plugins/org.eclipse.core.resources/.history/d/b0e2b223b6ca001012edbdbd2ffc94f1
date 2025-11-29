@@ -1,0 +1,104 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+public class chatAppServer extends Frame implements Runnable,  ActionListener{
+
+	TextField textField;
+	TextArea textArea;
+	Button send;
+	
+	
+	ServerSocket serversocket;
+	Socket socket;
+	
+	DataInputStream datainputStream;
+	DataOutputStream dataoutputStream;
+	
+	Thread chat;
+	chatAppServer(){
+		textField = new TextField();
+		textArea = new TextArea();
+		send = new Button("Send");
+		
+		
+		addWindowListener(new WindowAdapter() {
+		    public void windowClosing(WindowEvent e) {
+		        System.exit(0);
+		    }
+		});
+		
+		try {
+			serversocket = new ServerSocket(12000);
+			socket = serversocket.accept();
+			
+			datainputStream = new DataInputStream(socket.getInputStream());
+			dataoutputStream = new 	DataOutputStream(socket.getOutputStream());
+						
+		}
+		catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+		
+		chat = new Thread(this);
+		chat.start();
+	    
+		
+		
+		add(textField);
+		add(textArea);
+		add(send);
+		
+		
+		send.addActionListener(this);
+		
+		
+		setSize(500, 500);
+		setTitle("ChatApp Server");
+		setLayout(new FlowLayout());
+		setVisible(true);
+		
+	}
+	
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		String msg = textField.getText();
+		textArea.append("Server  " + msg + "\n");
+		textField.setText("");
+		
+		try {
+			dataoutputStream.writeUTF(msg);
+			dataoutputStream.flush();
+		}
+		catch(Exception E) {
+			System.out.println(E.getMessage());
+		}
+		
+
+	}
+	
+	public void run() {
+		while(true){
+			try {
+				String msg = datainputStream.readUTF();
+				textArea.append("Client" + msg + "\n");
+				
+			}catch(Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
+	}
+	
+	public static void main(String[] args) {
+		new chatAppServer();
+
+	}
+
+}

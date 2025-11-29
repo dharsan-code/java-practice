@@ -1,0 +1,45 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+class count{
+	int a = 0;
+	count(){
+		
+		Frame frame = new Frame("Counter");
+		
+		TextField text = new TextField(a);
+		text.setBounds(50, 50, 30, 30);
+		
+		Button btn = new Button("click me");
+		btn.setBounds(100, 100, 100, 50);
+		
+		frame.add(text);
+		frame.add(btn);
+		
+		frame.setLayout(null);
+        frame.setSize(500, 500);
+        frame.setVisible(true);	
+        
+        
+        ActionListener incrementCount = new ActionListener() {
+        	public void  actionPerformed(ActionEvent e) {
+        		a++;
+        		text.setText(a);
+        	}
+        };
+        
+        btn.addActionListener(incrementCount);
+		
+	}
+}
+
+
+class increment {
+
+	public static void main(String[] args) {
+		new count();
+
+	}
+
+}

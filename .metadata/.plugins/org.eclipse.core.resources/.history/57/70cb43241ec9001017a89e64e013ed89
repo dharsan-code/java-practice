@@ -1,0 +1,23 @@
+import java.awt.*;
+
+public class AWT{
+	
+	AWT(){
+		Frame frame = new Frame();
+		Button btn = new Button("Submit");
+		Button btn1 = new Button("Clear");
+		
+		frame.add(btn);
+		frame.add(btn1);
+		
+		frame.setLayout(new FlowLayout());
+		frame.setVisible(true);
+		frame.setSize(300, 300);
+	}
+
+	public static void main(String[] args) {
+		new AWT();
+
+	}
+
+}

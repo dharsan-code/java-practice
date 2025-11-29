@@ -1,0 +1,17 @@
+import java.awt.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
+
+public class catchMe extends Frame implements MouseMotionListener{
+
+	catchMe(){
+		addMouseMotionListener();
+		
+	}
+	
+	public static void main(String[] args) {
+
+
+	}
+
+}

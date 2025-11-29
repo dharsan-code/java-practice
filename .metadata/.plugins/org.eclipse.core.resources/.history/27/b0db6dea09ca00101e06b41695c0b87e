@@ -1,0 +1,45 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.event.MouseListener;
+
+public class mouse implements MouseListener {
+	
+	
+	
+	
+	mouse(){
+		Frame container = new Frame();
+		Label lab = new Label("Text");
+		
+		container.add(lab);
+		container.addMouseListener(this);
+		
+		container.setSize(500, 500);
+		container.setLayout(null);
+		container.setVisible(true);
+		
+		
+		container.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                container.dispose();
+                System.exit(0);
+            }
+        });
+	}
+		
+		public void mouseClicked(MouseEvent e) {
+	        System.out.println("Mouse Clicked");
+	    }
+
+	    public void mousePressed(MouseEvent e) {}
+
+	    public void mouseReleased(MouseEvent e) {}
+
+	    public void mouseEntered(MouseEvent e) {}
+
+	    public void mouseExited(MouseEvent e) {}
+
+	    public static void main(String[] args) {
+	        new mouse();
+	    }
+	}

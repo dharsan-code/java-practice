@@ -1,0 +1,41 @@
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class chatAppClient extends Frame implements  ActionListener{
+
+	TextField textField;
+	TextArea textArea;
+	Button send;
+	
+	chatAppClient(){
+		textField = new TextField();
+		textArea = new TextArea();
+		send = new Button("Send");
+		
+		
+		add(textField);
+		add(textArea);
+		add(send);
+		
+		
+		send.addActionListener(this);
+		
+		
+		setSize(500, 500);
+		setTitle("ChatApp");
+		setLayout(new FlowLayout());
+		setVisible(true);
+		
+	}
+	
+	public void ActionPerformed(ActionEvent e) {
+		
+	}
+	
+	public static void main(String[] args) {
+		new chatAppClient();
+
+	}
+
+}
